@@ -1,3 +1,5 @@
 name: BungeeSpy
 version: '${version}'
 main: com.github.kuripasanda.bungeespy.BungeeSpy
+author:
+  - kuripasanda
