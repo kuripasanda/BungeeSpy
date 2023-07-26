@@ -14,9 +14,9 @@ class ChatListener: Listener {
 
     @EventHandler
     fun onChat(event: ChatEvent) {
-        val player = event.sender as ProxiedPlayer
+        val sender = event.sender as ProxiedPlayer
         val msg = event.message
-        val server = player.server
+        val server = sender.server
 
         val monitoringPlayerUUIDs = playerDataHandler.getPlayersHasMonitorServer(server.info.name)
 
@@ -26,7 +26,7 @@ class ChatListener: Listener {
             if (player.server.info.name == server.info.name) return
 
             message.sendMessage(player, false,
-                "&6[Monitor] &7(${server.info.name}&7)&f ${player.name}&a: &f$msg")
+                "&6[Monitor] &7(${server.info.name}&7)&f ${sender.name}&a: &f$msg")
         }
 
     }
